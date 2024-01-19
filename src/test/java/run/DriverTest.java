@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-@CucumberOptions(features = "src/test/java/features/register.feature", glue = "steps")
+@CucumberOptions(features = "src/test/java/features/shoppingCart.feature", glue = "steps")
 public class DriverTest extends AbstractTestNGCucumberTests {
   private static WebDriver uniqueDriver = null;
 
@@ -17,6 +17,7 @@ public class DriverTest extends AbstractTestNGCucumberTests {
       uniqueDriver = new ChromeDriver();
       uniqueDriver.manage().window().maximize();
     }
+
     return uniqueDriver;
   }
 
