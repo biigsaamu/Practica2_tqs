@@ -53,13 +53,13 @@ Feature: login
     Given the user is in the register or login page and accepts or not the cookies
     When the user enters "samupautqs@gmail.com" in user field and "P2tqs2023" pwd field
     And the user clicks login button
-    Then a massage error "Usuari o contrasenya incorrectes"
+    Then a massage error "Usuari o contrasenya incorrectes" appears in the form
 
   Scenario: login fail, pwd correct user incorrect
     Given the user is in the register or login page and accepts or not the cookies
     When the user enters "incorrect@gmail.com" in user field and "P2tqs2024" pwd field
     And the user clicks login button
-    Then a massage error "Usuari o contrasenya incorrectes"
+    Then a massage error "Usuari o contrasenya incorrectes" appears in the form
 
   Scenario: login correct
     Given the user is in the register or login page and accepts or not the cookies

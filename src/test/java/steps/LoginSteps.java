@@ -49,22 +49,14 @@ public class LoginSteps {
   }
 
 
-
-
-
-
-
-
-
-
   @When("the user enters a wrong mail and right pwd")
   public void theUserEntersAWrongMailAndRightPwd() {
     function.writeTextOnElementGivenId("dwfrm_profile_customer_email", "incorrect@gmail.com");
     function.writeTextOnElementGivenId("dwfrm_profile_login_password", "P2tqs2024");
   }
 
-  @Then("a massage error {string}")
-  public void aMassageError(String errorMessage) {
+  @Then("a massage error {string} appears in the form")
+  public void aMassageErrorAppearsInTheForm(String errorMessage) {
     function.driverWaitSeconds(2);
     String feedbackError = function.getTextFromElementGivenClassName("invalid-feedback-form");
     Assert.assertEquals(feedbackError, errorMessage);
@@ -87,6 +79,7 @@ public class LoginSteps {
   }
 
 
+
   //Logout scenario
   @Given("the user profile page")
   public void theUserProfilePage() {
@@ -105,6 +98,5 @@ public class LoginSteps {
     String loginTitle = function.getTextFromElementGivenXpath("//*[@id=\"logintab1\"]/h2");
     Assert.assertEquals(loginTitle, "Iniciar sessió");
   }
-
 
 }
