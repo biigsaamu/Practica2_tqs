@@ -102,6 +102,54 @@ public class Functions {
     }
     return text;
   }
+  public void changeWebPage(String originalWindow) {
+    for(String windowHandle : driver.getWindowHandles()) {
+      if(!originalWindow.contentEquals(windowHandle)) {
+        driver.switchTo().window(windowHandle);
+        break;
+      }
+    }
+  }
+  public String getTextFromNewPageGivenXpath(String xpath/*, String clickXpath*/){
+    String text = null;
+    boolean found = false;
+    String originalWindow = driver.getWindowHandle();
+
+    changeWebPage(originalWindow);
+
+    /*if (clickXpath != null) {
+      openNewPage(clickXpath);
+      driverWaitSeconds(2);
+    }*/
+
+    text = getTextFromElementGivenXpath(xpath);
+
+    driver.close();
+    driver.switchTo().window(originalWindow);
+    return text;
+  }
+
+  /*public void openNewPage(String xpath) {
+    WebElement link = driver.findElement(By.xpath(xpath));
+    Actions newTab = new Actions(driver);
+    newTab.keyDown(Keys.CONTROL).click(link).keyUp(Keys.CONTROL).build().perform();
+  }*/
+
+  public String getUrlFromNewPage() {
+    String url = null;
+    boolean found = false;
+    String originalWindow = driver.getWindowHandle();
+
+    changeWebPage(originalWindow);
+
+    url = driver.getCurrentUrl();
+
+    driverWaitSeconds(1);
+    driver.close();
+    driver.switchTo().window(originalWindow);
+
+    return url;
+  }
 
 
   public void hoverElementGivenXpath(String xpath) {

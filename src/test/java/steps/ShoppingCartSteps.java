@@ -33,6 +33,16 @@ public class ShoppingCartSteps {
 
     // Scenario: Modify quantity of product
     /*TODO: Check errors*/
+    @And("the user hovers over the shopping cart button")
+    public void theUserHoversOverTheShoppingCartButton() {
+        function.driverWaitSeconds(1);
+        function.hoverElementGivenXpath("//*[@id=\"minicart-content-wrapper\"]/div[2]/div[2]/div[1]/span/a");
+    }
+    @And("the user clicks on the shopping cart menu")
+    public void theUserClicksOnTheShoppingCartMenu() {
+        function.driverWaitSeconds(1);
+        function.clickOnElementGivenXpath("//*[@id=\"header\"]/div[3]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/a");
+    }
     @And("the user clicks on the shopping cart")
     public void theUserClicksOnTheShoppingCart() {
         function.driverWaitSeconds(1);

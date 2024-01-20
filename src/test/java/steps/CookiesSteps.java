@@ -13,6 +13,7 @@ import org.testng.Assert;
 import run.DriverTest;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CookiesSteps {
 
@@ -28,20 +29,16 @@ public class CookiesSteps {
     //Us de WebDriverWait perque el botó d'acceptar cookies apareix amb una transició.
     //Fins que aquesta no es carrega no deixa interactuar amb l'element del botó.
     function.driverWaitSeconds(2);
-    function.clickOnElementGivenId("onetrust-accept-btn-handler");
-    /*
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-    System.out.println("Antes de accept cookies");
-    try {
-      WebElement cookies = driver.findElement(By.id("onetrust-accept-btn-handler"));
-      wait.until(ExpectedConditions.elementToBeClickable(cookies));
-      cookies.click();
-      System.out.println("Cookies aceptadas");
 
-    } catch (org.openqa.selenium.NoSuchElementException e) {
-      System.out.println("No se ha requerida aceptar cookies");
+    //Comprovem si apareix el botó d'acceptar cookies
+    String elementID = "onetrust-accept-btn-handler";
+    List<WebElement> elements = driver.findElements(By.id(elementID));
+    if (!elements.isEmpty()) {
+      function.clickOnElementGivenId("onetrust-accept-btn-handler");
+    } else {
+      System.out.println("No s'ha requerit acceptar cookies");
     }
-    function.driverWaitSeconds(1);*/
+
   }
 
   @Then("the home screen is displayed")

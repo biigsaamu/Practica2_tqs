@@ -27,14 +27,15 @@ public class SupportChatSteps {
     public void theSupportChatIsDisplayed() {
         function.driverWaitSeconds(1);
         /*TODO: The path doesn't work*/
-        WebElement out = driver.findElement(By.xpath("//*[@id=\"mCSB_2_container\"]/ul/li[1]/div/div/div/p[1]"));
+        WebElement out = driver.findElement(By.xpath("//*[@id=\"chat-wrapper\"]/div[1]/div[2]/div[2]/div[1]"));
         Assert.assertNotNull(out);
     }
 
     @And("the user clicks close support chat button")
     public void theUserClicksCloseSupportChatButton() {
         function.driverWaitSeconds(2);
-        function.clickOnElementGivenId("minimize-by-menu");
+        function.clickOnElementGivenId("livechat-wrapper");
+        //*[@id="minimize-by-menu"]
     }
 
     @Then("the support chat is closed")

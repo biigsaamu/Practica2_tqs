@@ -15,9 +15,9 @@ public class SideBarSteps {
 
   private static final WebDriver driver = DriverTest.getInstance();
 
-  //Scenario 1
-  @When("the user clicks the dropwdown menu")
-  public void theUserClicksTheDropwdownMenu() {
+  //Scenario Toys
+  @When("the user clicks the dropdown menu")
+  public void theUserClicksTheDropdownMenu() {
     driver.findElement(By.cssSelector(".abicon.abicon-burger")).click();
   }
 
