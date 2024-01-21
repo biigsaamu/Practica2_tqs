@@ -151,6 +151,21 @@ public class Functions {
     return url;
   }
 
+  public String getAttributeFromElementGivenXpath(String xpath, String attribute){
+    String text = null;
+    boolean found = false;
+    while (!found) {
+      try {
+        text = driver.findElement(By.xpath(xpath)).getAttribute(attribute);
+        found = true;
+      } catch (NoSuchElementException e) {
+        System.out.println("Element not found. Refreshing the page...");
+        driver.navigate().refresh();
+      }
+    }
+    return text;
+  }
+
 
   public void hoverElementGivenXpath(String xpath) {
     boolean found = false;
