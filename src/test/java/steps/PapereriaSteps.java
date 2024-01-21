@@ -123,6 +123,14 @@ public class PapereriaSteps {
     function.driverWaitSeconds(1);
   }
 
+  @And("the user clicks paper option")
+  public void theUserClicksPaperOption() {
+    function.driverWaitSeconds(1);
+    function.clickOnElementGivenXpath(
+        "/html/body/div[4]/header/div[4]/div[1]/div[2]/div[1]/ul/li[2]/div/ul/li[2]/div/div/div/div/div[1]/ul/li[2]/a");
+    System.out.println("Paper option selected");
+  }
+
   @And("the user clicks white glue option")
   public void theUserClicksWhiteGlueOption() {
     function.driverWaitSeconds(1);
@@ -157,4 +165,5 @@ public class PapereriaSteps {
     String pageTitle = function.getTextFromElementGivenClassName("title-container");
     Assert.assertEquals(pageTitle, "Pintura a l'oli");
   }
+
 }

@@ -23,9 +23,9 @@ Feature: Product details
     Given the user is in the home page and accepts or not the cookies
     And the user clicks stationery option
     And the user hovers the mouse over crafts category
-    And the user clicks white glue option
-    And the user selects the withe glue
-    Then "Cola Blanca Instant 100ml" information is displayed
+    And the user clicks paper option
+    And the user selects the Abacus paper
+    Then "Paper Abacus Copy 2-G A4 80g 500 fulls" information is displayed
 
   Scenario: Atomic Habits book details
 

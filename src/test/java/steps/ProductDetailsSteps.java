@@ -45,13 +45,15 @@ public class ProductDetailsSteps {
   }
 
 
-  //Scenario White glue
-  @And("the user selects the withe glue")
-  public void theUserSelectsTheWitheGlue() {
+  //Scenario Abacus paper
+  @And("the user selects the Abacus paper")
+  public void theUserSelectsTheAbacusPaper() {
+    String pageTitle = function.getTextFromElementGivenClassName("title-container");
+    Assert.assertEquals(pageTitle, "Paper");
     function.driverWaitSeconds(1);
     function.clickOnElementGivenXpath(
-        "//*[@id=\"product-search-results\"]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/h3/a");
-    System.out.println("Cola blanca product selected");
+        "//*[@id=\"product-search-results\"]/div[2]/div[2]/div[1]/div/div/div[2]/div[1]/div[1]/h3/a");
+    System.out.println("Abacus paper product selected");
   }
 
   //Scenario Atomic Habits book

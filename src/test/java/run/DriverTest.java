@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-@CucumberOptions(features = "src/test/java/features/professionalAbacus.feature", glue = "steps")
+@CucumberOptions(features = "src/test/java/features/register.feature", glue = "steps")
 public class DriverTest extends AbstractTestNGCucumberTests {
   private static WebDriver uniqueDriver = null;
 
